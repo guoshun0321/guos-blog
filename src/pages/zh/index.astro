@@ -1,25 +1,78 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
 import { SITE_TITLE } from "../../consts";
+
+const posts = (await getCollection('blog'))
+  .filter((p) => p.id.startsWith('zh/') || p.id.startsWith('openclaw/'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <!doctype html>
 <html lang="zh">
   <head>
     <BaseHead title={`${SITE_TITLE} (中文)`} />
+    <style>
+      .intro { margin-bottom: 2rem; }
+      .post-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 1rem;
+      }
+      .post-item {
+        padding: 1rem;
+        border: 1px solid rgb(var(--gray-light));
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.7);
+      }
+      .post-title { margin: 0; font-size: 1.1rem; line-height: 1.35; }
+      .post-meta { margin: 0.35rem 0 0; color: rgb(var(--gray)); font-size: 0.95rem; }
+      .post-desc { margin: 0.5rem 0 0; color: rgb(var(--gray-dark)); font-size: 0.98rem; }
+      .pill {
+        display: inline-block;
+        padding: 0.1rem 0.5rem;
+        border-radius: 999px;
+        border: 1px solid rgb(var(--gray-light));
+        font-size: 0.85rem;
+        color: rgb(var(--gray));
+        margin-left: 0.5rem;
+      }
+    </style>
   </head>
 
   <body>
     <Header />
     <main>
-      <h1>Guo's blog</h1>
-      <p>AI 系统工程 / 工程实践笔记（中文优先，英文后补）。</p>
-      <p><a href="/en">English (coming soon)</a></p>
+      <section class="intro">
+        <h1>Guo's blog</h1>
+        <p>AI 系统工程 / 工程实践笔记（中文优先，英文后补）。</p>
+        <p><a href="/">返回首页</a> · <a href="/en">English</a></p>
+      </section>
 
-      <hr />
-      <p>TODO：这里将展示中文文章列表（下一步接 Content Collections 生成列表）。</p>
+      <section>
+        <h2 style="font-size: 1.25rem; margin-bottom: 0.75rem;">文章列表</h2>
+        <ul class="post-list">
+          {
+            posts.map((post) => (
+              <li class="post-item">
+                <a href={`/blog/${post.id}/`} style="text-decoration: none;">
+                  <h3 class="post-title">
+                    {post.data.title}
+                    {post.id.startsWith('openclaw/') && <span class="pill">openclaw</span>}
+                  </h3>
+                  <p class="post-meta"><FormattedDate date={post.data.pubDate} /></p>
+                  <p class="post-desc">{post.data.description}</p>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
     </main>
     <Footer />
   </body>
