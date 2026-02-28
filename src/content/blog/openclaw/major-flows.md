@@ -66,7 +66,7 @@ flowchart TD
   A[openclaw gateway start] --> B[Load config + logging]
   B --> C[Acquire gateway lock / port]
   C --> D[Start WS/RPC server :18789]
-  D --> E[Init tool registry\n(exec/browser/canvas/nodes/...)]
+  D --> E[Init tool registry<br/>(exec/browser/canvas/nodes/...)]
   E --> F[Load plugins/extensions]
   F --> G[Connect channels]
   G --> H[Ready: sessions + agents + web surfaces]

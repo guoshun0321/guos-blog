@@ -161,14 +161,14 @@ flowchart TD
 ```mermaid
 flowchart TB
   subgraph CP[Control Plane]
-    WS[WS Server (wss)\nattachGatewayWsHandlers]
-    HTTP[HTTP Server(s)\nControl UI + API endpoints]
+    WS[WS Server (wss)<br/>attachGatewayWsHandlers]
+    HTTP[HTTP Server(s)<br/>Control UI + API endpoints]
     AUTH[Auth + Rate limit + Origin checks]
   end
 
   subgraph CORE[Runtime Core]
-    STATE[createGatewayRuntimeState\nclients/broadcast/chatRun/dedupe]
-    METHODS[coreGatewayHandlers\n+ pluginRegistry.gatewayHandlers\n+ channel methods]
+    STATE[createGatewayRuntimeState<br/>clients/broadcast/chatRun/dedupe]
+    METHODS[coreGatewayHandlers<br/>+ pluginRegistry.gatewayHandlers<br/>+ channel methods]
   end
 
   subgraph SUBSYS[Subsystems]

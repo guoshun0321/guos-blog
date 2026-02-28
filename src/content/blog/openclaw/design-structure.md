@@ -55,8 +55,8 @@ flowchart TB
   end
 
   subgraph Adapters[适配器/集成]
-    CH[Channels\n(WhatsApp/Telegram/Slack/...)]
-    NODES[Device Nodes\n(camera/screen/canvas/...)]
+    CH[Channels<br/>(WhatsApp/Telegram/Slack/...)]
+    NODES[Device Nodes<br/>(camera/screen/canvas/...)]
     BROWSER[Browser Control]
     CANVAS[Canvas Host + A2UI]
     PLUGINS[Plugins/Extensions]
