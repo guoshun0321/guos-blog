@@ -82,5 +82,23 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			</article>
 		</main>
 		<Footer />
+		<script type="module">
+			import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+			mermaid.initialize({ startOnLoad: false });
+
+			// Convert fenced mermaid code blocks into <div class="mermaid">
+			const blocks = document.querySelectorAll('pre > code.language-mermaid');
+			for (const code of blocks) {
+				const pre = code.parentElement;
+				const src = code.textContent || '';
+				const container = document.createElement('div');
+				container.className = 'mermaid';
+				container.textContent = src;
+				pre?.replaceWith(container);
+			}
+
+			await mermaid.run({ querySelector: '.mermaid' });
+		</script>
+
 	</body>
 </html>
