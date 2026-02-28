@@ -1,5 +1,5 @@
 ---
-title: "渲染测试：Mermaid + LaTeX"
+title: "技术写作渲染能力验证（Mermaid / LaTeX）"
 description: "测试 Mermaid 图与 LaTeX 公式是否正常渲染。"
 pubDate: 2026-02-28
 # custom
