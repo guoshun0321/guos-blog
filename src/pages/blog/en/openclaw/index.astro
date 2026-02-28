@@ -5,10 +5,54 @@ import Header from "../../../../components/Header.astro";
 import Footer from "../../../../components/Footer.astro";
 import FormattedDate from "../../../../components/FormattedDate.astro";
 
-const posts = (await getCollection('blog'))
-  .filter((p) => p.id.startsWith('en/openclaw/'))
-  // General -> Specific (ascending)
-  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+const all = (await getCollection('blog')).filter((p) => p.id.startsWith('en/openclaw/'));
+const byId = new Map(all.map((p) => [p.id, p]));
+
+const sections = [
+  {
+    title: 'Overview / Architecture',
+    ids: [
+      'en/openclaw/architecture',
+      'en/openclaw/design-structure',
+      'en/openclaw/major-packages',
+      'en/openclaw/major-flows',
+    ],
+  },
+  {
+    title: 'Gateway / Protocol / Channels',
+    ids: [
+      'en/openclaw/gateway-deepdive',
+      'en/openclaw/gateway-protocol-deepdive',
+      'en/openclaw/channels-deepdive',
+      'en/openclaw/sessions-deepdive',
+      'en/openclaw/memory-deepdive',
+    ],
+  },
+  {
+    title: 'Tools & Capabilities',
+    ids: [
+      'en/openclaw/tools-deepdive',
+      'en/openclaw/browser-deepdive',
+      'en/openclaw/canvas-deepdive',
+      'en/openclaw/nodes-deepdive',
+      'en/openclaw/cron-deepdive',
+      'en/openclaw/plugins-deepdive',
+    ],
+  },
+  {
+    title: 'Runtime & Agents',
+    ids: [
+      'en/openclaw/runtime-structure',
+      'en/openclaw/agents-deepdive',
+    ],
+  },
+];
+
+function renderList(ids) {
+  return ids
+    .map((id) => byId.get(id))
+    .filter(Boolean);
+}
 ---
 
 <!doctype html>
@@ -21,27 +65,37 @@ const posts = (await getCollection('blog'))
       .post-title { margin: 0; font-size: 1.1rem; line-height: 1.35; }
       .post-meta { margin: 0.35rem 0 0; color: rgb(var(--gray)); font-size: 0.95rem; }
       .post-desc { margin: 0.5rem 0 0; color: rgb(var(--gray-dark)); font-size: 0.98rem; }
+      .section { margin: 1.5rem 0 2rem; }
+      .section h2 { margin: 0 0 0.75rem; }
     </style>
   </head>
   <body>
     <Header />
     <main>
       <h1>OpenClaw Series (EN)</h1>
-      <p><a href="/">Home</a> · <a href="/en">English Home</a> · <a href="/zh">中文</a></p>
+      <p><a href="/">Home</a> · <a href="/blog/openclaw/">中文</a></p>
 
-      <ul class="post-list">
-        {
-          posts.map((post) => (
-            <li class="post-item">
-              <a href={`/blog/${post.id}/`} style="text-decoration: none;">
-                <h2 class="post-title">{post.data.title}</h2>
-                <p class="post-meta"><FormattedDate date={post.data.pubDate} /></p>
-                <p class="post-desc">{post.data.description}</p>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+      {sections.map((sec) => (
+        <section class="section">
+          <h2>{sec.title}</h2>
+          <ul class="post-list">
+            {renderList(sec.ids).map((post) => (
+              <li class="post-item">
+                <a href={`/blog/${post.id}/`} style="text-decoration: none;">
+                  <h3 class="post-title">{post.data.title}</h3>
+                  <p class="post-meta"><FormattedDate date={post.data.pubDate} /></p>
+                  <p class="post-desc">{post.data.description}</p>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+
+      <hr />
+      <p style="color: rgb(var(--gray));">
+        Note: This index is organized from general → specific.
+      </p>
     </main>
     <Footer />
   </body>

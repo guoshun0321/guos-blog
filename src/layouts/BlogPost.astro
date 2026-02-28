@@ -87,14 +87,23 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			mermaid.initialize({ startOnLoad: false });
 
 			// Convert fenced mermaid code blocks into <div class="mermaid">
-			const blocks = document.querySelectorAll('pre > code.language-mermaid');
-			for (const code of blocks) {
-				const pre = code.parentElement;
-				const src = code.textContent || '';
+			// Support both plain markdown and Astro/Shiki output
+			const blocks = [
+				...document.querySelectorAll('pre > code.language-mermaid'),
+				...document.querySelectorAll('pre[data-language="mermaid"]'),
+			];
+			const seen = new Set();
+			for (const el of blocks) {
+				// For Shiki: <pre data-language="mermaid"><code>...</code></pre>
+				const pre = el.matches('pre') ? el : el.parentElement;
+				if (!pre || seen.has(pre)) continue;
+				seen.add(pre);
+				const src = (pre.innerText || '').trim();
+				if (!src) continue;
 				const container = document.createElement('div');
 				container.className = 'mermaid';
 				container.textContent = src;
-				pre?.replaceWith(container);
+				pre.replaceWith(container);
 			}
 
 			await mermaid.run({ querySelector: '.mermaid' });
