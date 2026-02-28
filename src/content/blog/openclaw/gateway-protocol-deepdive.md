@@ -1,7 +1,7 @@
 ---
 title: "Gateway 协议与方法表走读（WS/HTTP）"
 description: "代码位置："
-pubDate: 2026-02-27
+pubDate: 2026-02-26T15:00:00Z
 ---
 
 # Gateway 协议与方法表走读（WS/HTTP）

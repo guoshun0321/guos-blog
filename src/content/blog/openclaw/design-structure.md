@@ -1,7 +1,7 @@
 ---
 title: "2. 项目设计结构（Design Structure）"
 description: "本节回答：代码如何分层、模块边界是什么、核心抽象是什么。"
-pubDate: 2026-02-27
+pubDate: 2026-02-26T11:00:00Z
 ---
 
 # 2. 项目设计结构（Design Structure）

@@ -1,7 +1,7 @@
 ---
 title: "Plugins 走读（Deep Dive）"
 description: "代码位置：`/root/github/openclaw/src/plugins/*`"
-pubDate: 2026-02-27
+pubDate: 2026-02-26T24:00:00Z
 ---
 
 # Plugins 走读（Deep Dive）

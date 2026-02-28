@@ -1,7 +1,7 @@
 ---
 title: "Design Structure"
 description: "English summary/translation for OpenClaw notes: Design Structure."
-pubDate: 2026-02-27
+pubDate: 2026-02-26T11:00:00Z
 ---
 
 > English version (initial pass).

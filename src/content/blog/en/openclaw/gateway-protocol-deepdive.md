@@ -1,7 +1,7 @@
 ---
 title: "Gateway Protocol Deep Dive"
 description: "English summary/translation for OpenClaw notes: Gateway Protocol Deep Dive."
-pubDate: 2026-02-27
+pubDate: 2026-02-26T15:00:00Z
 ---
 
 > English version (initial pass).

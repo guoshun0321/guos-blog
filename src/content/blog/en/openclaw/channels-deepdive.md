@@ -1,7 +1,7 @@
 ---
 title: "Channels Deep Dive"
 description: "English summary/translation for OpenClaw notes: Channels Deep Dive."
-pubDate: 2026-02-27
+pubDate: 2026-02-26T16:00:00Z
 ---
 
 > English version (initial pass).

@@ -1,7 +1,7 @@
 ---
 title: "Browser（浏览器控制）走读（Deep Dive）"
 description: "代码位置：`/root/github/openclaw/src/browser/*`"
-pubDate: 2026-02-27
+pubDate: 2026-02-26T20:00:00Z
 ---
 
 # Browser（浏览器控制）走读（Deep Dive）

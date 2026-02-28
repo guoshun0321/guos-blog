@@ -1,7 +1,7 @@
 ---
 title: "Channels 走读（Deep Dive）"
 description: "代码位置："
-pubDate: 2026-02-27
+pubDate: 2026-02-26T16:00:00Z
 ---
 
 # Channels 走读（Deep Dive）

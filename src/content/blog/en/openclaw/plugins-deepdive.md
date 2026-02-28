@@ -1,7 +1,7 @@
 ---
 title: "Plugins Deep Dive"
 description: "English summary/translation for OpenClaw notes: Plugins Deep Dive."
-pubDate: 2026-02-27
+pubDate: 2026-02-26T24:00:00Z
 ---
 
 > English version (initial pass).

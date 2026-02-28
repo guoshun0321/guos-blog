@@ -1,7 +1,7 @@
 ---
 title: "Canvas / A2UI 走读（Deep Dive）"
 description: "代码位置："
-pubDate: 2026-02-27
+pubDate: 2026-02-26T21:00:00Z
 ---
 
 # Canvas / A2UI 走读（Deep Dive）

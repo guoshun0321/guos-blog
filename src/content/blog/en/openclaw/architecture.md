@@ -1,7 +1,7 @@
 ---
 title: "Architecture"
 description: "English summary/translation for OpenClaw notes: Architecture."
-pubDate: 2026-02-26
+pubDate: 2026-02-26T10:00:00Z
 ---
 
 > English version (initial pass).

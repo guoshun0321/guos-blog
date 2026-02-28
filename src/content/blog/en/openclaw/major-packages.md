@@ -1,7 +1,7 @@
 ---
 title: "Major Packages"
 description: "English summary/translation for OpenClaw notes: Major Packages."
-pubDate: 2026-02-27
+pubDate: 2026-02-26T12:00:00Z
 ---
 
 > English version (initial pass).

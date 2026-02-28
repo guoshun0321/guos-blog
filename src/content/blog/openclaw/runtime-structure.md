@@ -1,7 +1,7 @@
 ---
 title: "1. 项目运行时结构（Runtime Structure）"
 description: "本节回答：OpenClaw 在“跑起来”时，进程/入口/模块如何拼装；有哪些关键运行时组件；它们如何连接。"
-pubDate: 2026-02-27
+pubDate: 2026-02-26T25:00:00Z
 ---
 
 # 1. 项目运行时结构（Runtime Structure）

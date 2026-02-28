@@ -1,7 +1,7 @@
 ---
 title: "3. 项目的主要包/模块（Major Packages）"
 description: "本节回答：仓库中哪些目录/包最关键，它们各自负责什么。"
-pubDate: 2026-02-27
+pubDate: 2026-02-26T12:00:00Z
 ---
 
 # 3. 项目的主要包/模块（Major Packages）

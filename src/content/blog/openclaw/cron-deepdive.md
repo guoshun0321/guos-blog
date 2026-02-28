@@ -1,7 +1,7 @@
 ---
 title: "Cron 走读（Deep Dive）"
 description: "代码位置：`/root/github/openclaw/src/cron/*`"
-pubDate: 2026-02-27
+pubDate: 2026-02-26T23:00:00Z
 ---
 
 # Cron 走读（Deep Dive）

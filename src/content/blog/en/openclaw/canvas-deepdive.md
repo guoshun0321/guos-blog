@@ -1,7 +1,7 @@
 ---
 title: "Canvas Deep Dive"
 description: "English summary/translation for OpenClaw notes: Canvas Deep Dive."
-pubDate: 2026-02-27
+pubDate: 2026-02-26T21:00:00Z
 ---
 
 > English version (initial pass).

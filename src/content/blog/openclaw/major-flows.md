@@ -1,7 +1,7 @@
 ---
 title: "4. 项目的主要流程（Major Flows）"
 description: "本节回答：从“收到一条消息”到“回复/执行工具”的核心流程是什么；从“启动 gateway”到“可用”的流程是什么。"
-pubDate: 2026-02-27
+pubDate: 2026-02-26T13:00:00Z
 ---
 
 # 4. 项目的主要流程（Major Flows）
