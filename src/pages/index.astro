@@ -1,4 +1,29 @@
 ---
-// Default language: /zh
-return Astro.redirect('/zh', 302);
+// Default language: Chinese
+// Instead of redirecting (which shows an ugly text page on first load),
+// render the Chinese homepage directly at `/`.
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE } from "../consts";
 ---
+
+<!doctype html>
+<html lang="zh">
+  <head>
+    <BaseHead title={`${SITE_TITLE} (中文)`} />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Guo's blog</h1>
+      <p>AI 系统工程 / 工程实践笔记（中文优先，英文后补）。</p>
+      <p><a href="/en">English (coming soon)</a></p>
+
+      <hr />
+      <p>TODO：这里将展示中文文章列表（下一步接 Content Collections 生成列表）。</p>
+    </main>
+    <Footer />
+  </body>
+</html>
