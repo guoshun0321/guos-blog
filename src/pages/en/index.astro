@@ -1,0 +1,23 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE } from "../../consts";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`${SITE_TITLE} (EN)`} />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <h1>Guo's blog</h1>
+      <p>English posts will be added later.</p>
+      <p><a href="/zh">中文</a></p>
+    </main>
+    <Footer />
+  </body>
+</html>
