@@ -29,8 +29,8 @@ flowchart TD
   A[用户执行: openclaw ...] --> B[openclaw.mjs (bootstrap)]
   B -->|import| C[dist/entry.js]
   C --> D[src/entry.ts]
-  D --> E{是否需要 respawn?<br/>--disable-warning=ExperimentalWarning}
-  E -->|是| F[spawn node child<br/>并 attach bridge]
+  D --> E{是否需要 respawn? --disable-warning=ExperimentalWarning}
+  E -->|是| F[spawn node child 并 attach bridge]
   E -->|否| G[src/cli/run-main.ts runCli(argv)]
   G --> H[tryRouteCli (部分命令可直接路由/短路)]
   H -->|未路由| I[buildProgram + registerCore/subcli + plugin CLI]
@@ -64,7 +64,7 @@ flowchart LR
     IOS[iOS/Android/macOS Node]
   end
 
-  subgraph Gateway[OpenClaw Gateway<br/>(control plane)]
+  subgraph Gateway[OpenClaw Gateway (control plane)]
     WS[WebSocket / RPC]
     SES[Sessions]
     AG[Agents]
