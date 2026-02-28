@@ -44,14 +44,14 @@ body {
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));
-	font-size: 18px;
-	line-height: 1.65;
+	font-size: 12px;
+	line-height: 1.75;
 }
 main {
-	width: 720px;
-	max-width: calc(100% - 2em);
+	width: 1100px;
+	max-width: calc(100% - 3rem);
 	margin: auto;
-	padding: 3em 1em;
+	padding: 3rem 1.5rem;
 }
 h1,
 h2,
@@ -64,19 +64,19 @@ h6 {
 	line-height: 1.2;
 }
 h1 {
-	font-size: 2.4em;
+	font-size: 2.1em;
 }
 h2 {
-	font-size: 1.9em;
+	font-size: 1.7em;
 }
 h3 {
-	font-size: 1.5em;
+	font-size: 1.35em;
 }
 h4 {
-	font-size: 1.563em;
+	font-size: 1.15em;
 }
 h5 {
-	font-size: 1.25em;
+	font-size: 1.05em;
 }
 strong,
 b {
@@ -96,10 +96,10 @@ p {
 }
 textarea {
 	width: 100%;
-	font-size: 16px;
+	font-size: 12px;
 }
 input {
-	font-size: 16px;
+	font-size: 12px;
 }
 table {
 	width: 100%;
@@ -133,10 +133,10 @@ hr {
 }
 @media (max-width: 720px) {
 	body {
-		font-size: 18px;
+		font-size: 12px;
 	}
 	main {
-		padding: 1em;
+		padding: 1.25rem 1rem;
 	}
 }
 
