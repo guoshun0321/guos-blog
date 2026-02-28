@@ -51,7 +51,8 @@ import HeaderLink from './HeaderLink.astro';
 	}
 	h2 {
 		margin: 0;
-		font-size: 1em;
+		font-size: 1.15rem;
+		letter-spacing: 0.2px;
 	}
 
 	h2 a,
@@ -64,10 +65,11 @@ import HeaderLink from './HeaderLink.astro';
 		justify-content: space-between;
 	}
 	nav a {
-		padding: 1em 0.5em;
+		padding: 1rem 0.6rem;
 		color: var(--black);
 		border-bottom: 4px solid transparent;
 		text-decoration: none;
+		font-size: 1rem;
 	}
 	nav a.active {
 		text-decoration: none;
@@ -80,6 +82,13 @@ import HeaderLink from './HeaderLink.astro';
 	@media (max-width: 720px) {
 		.social-links {
 			display: none;
+		}
+		h2 {
+			font-size: 1.05rem;
+		}
+		nav a {
+			font-size: 0.95rem;
+			padding: 0.9rem 0.5rem;
 		}
 	}
 </style>
