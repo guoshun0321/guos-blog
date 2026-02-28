@@ -30,7 +30,7 @@ flowchart TD
   B -->|import| C[dist/entry.js]
   C --> D[src/entry.ts]
   D --> E{是否需要 respawn?\n--disable-warning=ExperimentalWarning}
-  E -->|是| F[spawn node child\n并 attach bridge]
+  E -->|是| F[spawn node child<br/>并 attach bridge]
   E -->|否| G[src/cli/run-main.ts runCli(argv)]
   G --> H[tryRouteCli (部分命令可直接路由/短路)]
   H -->|未路由| I[buildProgram + registerCore/subcli + plugin CLI]
